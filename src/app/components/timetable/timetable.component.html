@@ -1,0 +1,17 @@
+<div id="timetable">
+    <div class="day" *ngFor="let day of events">
+        <div class="event" *ngFor="let event of day">
+            <p>{{event.start[0]}}:{{formatTime(event.start[1])}} - 
+                {{event.end[0]}}:{{formatTime(event.end[1])}}</p>
+            <h3>{{event.shortName}}</h3>
+            <h5 *ngIf="!event.online">{{event.room}}</h5>
+            <h5 *ngIf="event.online">online</h5>
+            <div class="expand-icon">
+                <span class="material-symbols-outlined">
+                    expand_content
+                </span>
+            </div>
+            <div class="event-cover"></div>
+        </div>
+    </div>
+</div>
