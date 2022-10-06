@@ -1,3 +1,4 @@
+import { DetailsService } from './../../services/details.service';
 import { ScheduledEvent } from './../../interfaces/scheduled-event';
 import { eventsData } from './../../data';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class TimetableComponent implements OnInit {
   sections = [1,2,3,4]
   events : ScheduledEvent[][] = Array(5).fill([])
 
-  constructor() { }
+  constructor(private detailsService : DetailsService) { }
 
   ngOnInit(): void {
     let tempEvents = eventsData
@@ -31,6 +32,10 @@ export class TimetableComponent implements OnInit {
       minutesString = `0${minutesString}`
     }
     return minutesString
+  }
+
+  openEventDetails(event:ScheduledEvent){
+    this.detailsService.setEvent(event)
   }
 
 }

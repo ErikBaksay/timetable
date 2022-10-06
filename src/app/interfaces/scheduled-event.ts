@@ -3,8 +3,9 @@ export interface ScheduledEvent {
     shortName: string,
     online: boolean,
     room: string,
-    professor: string | string[],
-    professorEmail: string | string[],
+    linkToRoom: string|null,
+    professor: string[],
+    professorEmail: string[],
     day: number,
     start: number[],
     end: number[]

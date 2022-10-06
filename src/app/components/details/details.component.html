@@ -1,1 +1,36 @@
-<p>details works!</p>
+<div id="details-background">
+    <div id="details">
+        <ng-container *ngIf="event != null">
+            <p id="time">{{event.start[0]}}:{{formatTime(event.start[1])}} - 
+                {{event.end[0]}}:{{formatTime(event.end[1])}}</p>
+            <h3 id="name">{{event.name}}</h3>
+            
+            <div id="contact-and-location">
+
+                <div id="contact-container">
+                    <div class="contact" *ngFor="let professor of event.professor, let i = index">
+                        <h5>{{professor}}</h5>
+                        <p>{{event.professorEmail[i]}}</p>
+                    </div>
+                </div>
+
+                <div id="location-container">
+                    <div id="location" [class.with-link]="!event.online" (click)="openOnMaps(event.linkToRoom)">
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        <h5 *ngIf="!event.online"> 
+                            {{event.room}}
+                        </h5>
+                        <h5 *ngIf="event.online">online</h5>
+                    </div>
+
+                </div> 
+
+            </div>
+            <div id="button-container">
+                <button (click)="closeDetails()">Close</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

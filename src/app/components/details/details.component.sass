@@ -1,0 +1,72 @@
+#details-background
+    height: 100%
+    width: 100%
+    background: rgba(0, 0, 0, 0.1)
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 20 
+    display: none
+    justify-content: center
+    align-items: center
+    //display: none
+    #details
+        height: fit-content
+        width: 70vw
+        max-width: 400px
+        padding: 20px
+        background: #fff
+        border-radius: 4px
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+        #time
+            font-weight: 400
+            font-size: 14px
+        #name
+            margin-top: 6px
+            font-weight: 500
+            font-size: 17px
+        #contact-and-location
+            margin-top: 20px
+            display: grid
+            grid-auto-flow: column
+            grid-template-areas: 'contact location'
+            #contact-container
+                .contact
+                    margin-top: 10px
+                    font-weight: 100
+                    font-size: 12px
+                    font-weight: 500
+            #location-container
+                align-self: center
+                justify-self: center
+                #location
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    width: fit-content
+                    h5
+                        font-weight: 300
+                        font-size: 14px
+                    span.material-symbols-outlined
+                        font-size: 16px
+                        font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20
+                #location.with-link
+                    cursor: pointer
+                    border: 1px solid #CCC
+                    background: #f9f9f9
+                    border-radius: 4px
+                    padding: 6px
+                #location.with-link:hover
+                    background: #ebebeb
+        #button-container
+            margin-top: 12px 
+            width: 100%
+            text-align: center
+        button        
+            cursor: pointer
+            border: 1px solid #CCC
+            background: #f9f9f9
+            padding: 6px
+            border-radius: 4px
+        button:hover
+            background: #ebebeb
